@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<ThingDef Class="SK.ThingDef_AnimatedWorktable" ParentName="WorkTable">
+		<defName>ElectricSmelter</defName>
+		<label>electric smelting furnace</label>
+		<thingClass>SK.Building_AnimatedWorktable</thingClass>
+		<description>A furnace used for smelting more advanced metal ores, slag, and sand into metal alloys and silicon-based alloys. Can make metal cans and produce charcoal from logs. Requires power.</description>
+		<drawerType>MapMeshAndRealTime</drawerType>
+		<graphicData>
+			<texPath>Things/Building/Production/ElectricFurnace/TableFurnaceElectric</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<drawSize>(3,1)</drawSize>
+			<shaderType>CutoutComplex</shaderType>
+			<shadowData>
+				<volume>(2.7, 1.0, 0.85)</volume>
+				<offset>(0,0,0)</offset>
+			</shadowData>
+			<damageData>
+				<cornerTL>Damage/Corner</cornerTL>
+				<cornerTR>Damage/Corner</cornerTR>
+				<cornerBL>Damage/Corner</cornerBL>
+				<cornerBR>Damage/Corner</cornerBR>
+			</damageData>
+		</graphicData>
+
+		<stuffCategories>
+			<li>RuggedMetallic</li>
+		</stuffCategories>
+		<costStuffCount>155</costStuffCount>
+		<costList>
+			<ComponentIndustrial>12</ComponentIndustrial>
+			<ElectronicComponents>6</ElectronicComponents>
+			<Mechanism>8</Mechanism>
+		</costList>
+		<statBases>
+			<WorkToBuild>3500</WorkToBuild>
+			<MaxHitPoints>230</MaxHitPoints>
+			<Flammability>1.0</Flammability>
+			<Cleanliness>-8</Cleanliness>
+		</statBases>
+		<size>(3,1)</size>
+		<designationCategory>Production</designationCategory>
+		<interactionCellOffset>(0,0,-1)</interactionCellOffset>
+		<recipes>
+			<li>SmeltWeapon</li>
+			 <li>Make_Yadarit</li>
+			<li>Make_Yadarit_alloy</li>
+			<li>Make_Yadarit_cristal</li>
+			<li>MakeCharcoal_Electric</li>
+			<li>MakeSilicon_Electric</li>
+			<li>MakeTinBars_Electric</li>
+			<li>MakeCopperBars_Electric</li>
+			<li>MakeBronze_Electric</li>
+			<li>MakeSteelBars_Electric</li>
+			<li>MakeAluminiumBars_Electric</li>
+			<li>MakeLeadBars_Electric</li>
+			<li>MakeFerrosiliconAlloy</li>
+			<li>MakeGoldBars_Electric</li>
+			<li>MakeSilverBars_Electric</li>
+			<li>ExtractMetalFromSlag</li>
+		</recipes>
+		<tickerType>Normal</tickerType>
+		<comps>
+			<li Class="CompProperties_Power">
+				<compClass>CompPowerTrader</compClass>
+				<basePowerConsumption>950</basePowerConsumption>
+				<shortCircuitInRain>true</shortCircuitInRain>
+			</li>
+			<li Class="CompProperties_Glower">
+				<glowRadius>3</glowRadius>
+				<glowColor>(217,112,33,0)</glowColor>
+			</li>
+			<li Class="CompProperties_Flickable"/>
+			<li Class="CompProperties_Breakdownable"/>
+			<li Class="CompProperties_HeatPusher">
+				<compClass>CompHeatPusherPowered</compClass>
+				<heatPerSecond>9.5</heatPerSecond>
+				<heatPushMaxTemperature>75</heatPushMaxTemperature>
+			</li>
+			<li Class="SK.CompProperties_LowIdleDraw">
+				<compClass>SK.CompPowerLowIdleDraw</compClass>
+				<idlePowerFactor>0.1</idlePowerFactor>
+			</li>
+			<li Class="CompProperties_AffectedByFacilities">
+				<linkableFacilities>
+					<li>ToolCabinet</li>
+					<li>PodChair</li>
+				</linkableFacilities>
+			</li>
+			<li>
+				<compClass>CompReportWorkSpeed</compClass>
+			</li>
+		</comps>
+		<placeWorkers>
+			<li>PlaceWorker_ShowFacilitiesConnections</li>
+			<li>PlaceWorker_ReportWorkSpeedPenalties</li>
+		</placeWorkers>
+		<building>
+			<heatPerTickWhileWorking>2</heatPerTickWhileWorking>
+		</building>
+		<researchPrerequisites>
+			<li>Metals_C1</li>
+		</researchPrerequisites>
+		<designationHotKey>Misc4</designationHotKey>
+		<constructionSkillPrerequisite>9</constructionSkillPrerequisite>
+	</ThingDef>
+
+	
+</Defs>

@@ -1,0 +1,17 @@
+﻿<Patch>
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs</xpath>
+		<value>
+			<ArchitectSense.DesignationSubCategoryDef>
+				<defName>SubCategory_EadaritHSK</defName>
+				<label>Пол из ядарита</label>
+				<description>Пол сделаный из Ядарита.</description>
+				<defNames>
+					<li>FloorStoneStaggeredYadaritBrick</li>
+				</defNames>
+				<designationCategory>NaturalFloors</designationCategory>
+				<debug>false</debug>
+			</ArchitectSense.DesignationSubCategoryDef>
+		</value>
+	</Operation>
+</Patch>

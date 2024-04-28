@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<ThingDef ParentName="CocoonBase">
+    <defName>CocoonAbomination</defName>
+    <label>Кокон Нечто</label>
+    <description>Стазисный кокон с нечто.\n\nВ неблагоприятных условиях нечто иногда образуют стазисные коконы и прячутся под землей. Эти коконы защищают нечто от огня, экстремальных температур и других опасностей в течение многих лет.\n\nЗагрязнители могут стимулировать коконы и заставлять их всплывать на поверхность, а сильные загрязнители могут привлекать коконы с больших расстояний.\n\nКоконы ничего не делают, если они не нарушенный. Если кокон потревожить или разрушить, тварь внутри проснется и атакует, вызывая в процессе другие близлежащие коконы.</description>
+    <graphicData>
+	  <graphicClass>Graphic_Single</graphicClass>
+      <texPath>Things/Building/Natural/CocoonAbomination</texPath>
+      <drawSize>2</drawSize>
+    </graphicData>
+    <building>
+      <combatPower>480</combatPower>
+    </building>
+    <comps>
+      <li Class="CompProperties_PawnSpawnOnWakeup">
+        <pawnSpawnRadius>0</pawnSpawnRadius>
+        <points>480</points>
+        <spawnablePawnKinds>
+          <li>AbominationInsectoid</li>
+        </spawnablePawnKinds>
+        <lordJob>LordJob_DefendAndExpandHive</lordJob>
+        <shouldJoinParentLord>True</shouldJoinParentLord>
+       <!-- <mentalState>CocoonDisturbed</mentalState>-->
+        <destroyAfterSpawn>true</destroyAfterSpawn>
+      </li>
+    </comps>
+  </ThingDef>
+</Defs>

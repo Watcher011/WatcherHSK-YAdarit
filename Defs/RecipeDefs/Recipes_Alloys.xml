@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+
+  
+	<RecipeDef>
+		<defName>Make_Yadarit</defName>
+		<label>Очистить ядарит</label>
+		<description>Очистка ядарита от примисей(20 обработаного ядарита)</description>
+		<workAmount>1000</workAmount>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>yadaritRaW</li>
+					</thingDefs>
+				</filter>
+				<count>25</count>
+			</li>
+		</ingredients>
+		<products>
+			<yadarit>20</yadarit>
+		</products>
+	</RecipeDef>
+	
+<RecipeDef>
+		<defName>Make_Yadarit_cristal</defName>
+		<label>Трансмутация светокамня</label>
+		<description>Обработка ядарита в светокамень(10 светокамня)</description>
+		<workAmount>1000</workAmount>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>yadarit</li>
+					</thingDefs>
+				</filter>
+				<count>60</count>
+			</li>
+		</ingredients>
+		<products>
+			<Glowstone>10</Glowstone>
+		</products>
+	</RecipeDef>
+
+	
+	
+	<RecipeDef>
+		<defName>Make_Yadarit_alloy</defName>
+		<label>Выплавить ядарит сплав</label>
+		<description>Выплавить ядарит из очищенного сырья(75 ядарит стали)</description>
+		<workAmount>1000</workAmount>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>Steel</li>
+					</thingDefs>
+				</filter>
+				<count>15</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>yadarit</li>
+					</thingDefs>
+				</filter>
+				<count>60</count>
+			</li>
+		</ingredients>
+		<products>
+			<YadaritBar>75</YadaritBar>
+		</products>
+	</RecipeDef>
+	
+
+</Defs>

@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+	
+
+	<TerrainDef ParentName="SK_TileStoneBase">
+		<defName>FloorStoneStaggeredYadaritBrick</defName>
+		<label>Ядарит плитка</label>
+		<!-- <color>(139,0,255)</color>-->
+		<renderPrecedence>270</renderPrecedence>
+		<description>Каменный пол из аккуратных квадратных плит ядарита
+Beauty: 7.</description>
+		<texturePath>Things/16</texturePath>
+		<researchPrerequisites>
+			<li>Stone_floor_B4</li>
+		</researchPrerequisites>
+		<statBases>
+			<WorkToBuild>820</WorkToBuild>
+			<Beauty>7</Beauty>
+		</statBases>
+		<costList>
+			<yadarit>4</yadarit>
+		</costList>
+		<designationCategory>NaturalFloors</designationCategory>
+	</TerrainDef>
+
+
+	
+</Defs>

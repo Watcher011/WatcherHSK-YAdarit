@@ -1,0 +1,130 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+	<!-- ====== Abomination ===== -->
+	
+	<ThingDef ParentName="SK_AnimalThingBase" Name="InstectoidBase" Abstract="True">
+		<statBases>
+			<Flammability>0.3</Flammability>
+			<LeatherAmount>20</LeatherAmount>
+			<ImmunityGainSpeed>2.5</ImmunityGainSpeed>
+			<SmokeSensitivity>0.5</SmokeSensitivity>
+			<GermResistance>0.5</GermResistance>
+			<GermContainment>0.1</GermContainment>
+			<FilthRate>6</FilthRate>
+			<ToxicResistance>0.8</ToxicResistance>
+		</statBases>
+		<race>
+			<thinkTreeMain>TheThing</thinkTreeMain>
+			<thinkTreeConstant>AnimalConstant</thinkTreeConstant>
+			<herdMigrationAllowed>false</herdMigrationAllowed>
+			<intelligence>ToolUser</intelligence>
+			<fleshType>Insectoid</fleshType>
+			<bloodDef>Filth_BloodInsect</bloodDef>
+			<foodType>OmnivoreAnimal, AnimalProduct</foodType>
+			<manhunterOnDamageChance>1</manhunterOnDamageChance>
+			<manhunterOnTameFailChance>0.35</manhunterOnTameFailChance>
+			<nameGenerator>NamerAnimalGenericMale</nameGenerator>
+			<nameGeneratorFemale>NamerAnimalGenericFemale</nameGeneratorFemale>
+			<hediffGiverSets>
+				<li>HardPassiveSet</li>
+			</hediffGiverSets>
+		</race>
+		<ingredient>
+			<mergeCompatibilityTags>
+				<li MayRequire="Ludeon.RimWorld.Ideology">InsectMeat</li>
+			</mergeCompatibilityTags>
+		</ingredient>
+	</ThingDef>
+	
+	
+	<ThingDef ParentName="InstectoidBase">
+		<defName>Abomination</defName>
+		<thingClass>SK.Events.Pawn_TheThing</thingClass>
+		<label>Abomination</label>
+		<description>Abominations are slow, hulking, relentless manifestations of flesh. Their bodies twist and contort to heal even major wounds quickly. Their mangled maw seeps with toxic bile. They will consume and assimilate, corpse by corpse.</description>
+		<tickerType>Normal</tickerType>
+		<statBases>
+			<Mass>80</Mass>
+			<MoveSpeed>2.1</MoveSpeed>
+			<Flammability>5</Flammability>
+			<MeatAmount>0</MeatAmount>
+			<LeatherAmount>0</LeatherAmount>
+			<ArmorRating_Blunt>0.5</ArmorRating_Blunt>
+			<ComfyTemperatureMin>-173</ComfyTemperatureMin>
+			<ComfyTemperatureMax>98</ComfyTemperatureMax>
+			<ImmunityGainSpeed>5</ImmunityGainSpeed>
+			<MeleeDodgeChance>0</MeleeDodgeChance>
+			<MeleeCritChance>0</MeleeCritChance>
+			<MeleeParryChance>0</MeleeParryChance>
+			<SmokeSensitivity>0</SmokeSensitivity>
+			<PsychicSensitivity>0</PsychicSensitivity>
+			<ToxicResistance>1</ToxicResistance>
+		</statBases>
+		
+		<tools>
+			<li Class="CombatExtended.ToolCE">
+				<label>head</label>
+				<capacities>
+					<li>ToxicBite</li>
+				</capacities>
+				<power>16</power>
+				<cooldownTime>1.7</cooldownTime>
+				<linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+				<armorPenetrationSharp>2.8</armorPenetrationSharp>
+				<armorPenetrationBlunt>2.6</armorPenetrationBlunt>
+			</li>
+		</tools>
+		<comps>
+			<li Class="SK.CompProperties_PawnJumper">
+				<maxCharges>5</maxCharges>
+				<!-- Number of possible jumps -->
+				<minEnergy>0.05</minEnergy>
+				<!-- Subtracts from the current rest(energy) level. 0.5 = 50% -->
+				<ammoCountPerCharge>10</ammoCountPerCharge>
+				<!-- Rest(energy) consumption. 10 = 10% cost per jump. -->
+				<jumpCooldown>1250</jumpCooldown>
+				<!-- Jump cooldown in ticks -->
+				<range>10</range>
+				<chargeNoun>jump</chargeNoun>
+				<hotKey>Misc4</hotKey>
+				<displayGizmoWhileUndrafted>false</displayGizmoWhileUndrafted>
+			</li>
+		</comps>
+	
+		<race>
+			<intelligence>ToolUser</intelligence>
+			<thinkTreeMain>TheThing</thinkTreeMain>
+			<herdMigrationAllowed>false</herdMigrationAllowed>
+			<body>QuadrupedAnimalWithHooves</body>
+			<needsRest>false</needsRest>
+			<makesFootprints>true</makesFootprints>
+			<manhunterOnDamageChance>0</manhunterOnDamageChance>
+			<hasGenders>true</hasGenders>
+			<foodType>None</foodType>
+			<useMeatFrom>Human</useMeatFrom>
+			<lifeExpectancy>10</lifeExpectancy>
+			<baseBodySize>1.2</baseBodySize>
+			<baseHealthScale>3.8</baseHealthScale>
+			<lifeStageAges>
+				<li>
+					<def>MechanoidFullyFormed</def>
+					<minAge>0</minAge>
+					<soundWounded>Pawn_Muffalo_Wounded</soundWounded>
+					<soundDeath>Pawn_Muffalo_Death</soundDeath>
+				</li>
+			</lifeStageAges>
+			<soundMeleeHitPawn>Pawn_Melee_BigBash_HitPawn</soundMeleeHitPawn>
+			<soundMeleeHitBuilding>Pawn_Melee_BigBash_HitBuilding</soundMeleeHitBuilding>
+			<soundMeleeMiss>Pawn_Melee_BigBash_Miss</soundMeleeMiss>
+			<hediffGiverSets>
+				<li>UndeadPassiveSet</li>
+			</hediffGiverSets>
+		</race>
+		<modExtensions>
+			<li Class="CombatExtended.RacePropertiesExtensionCE">
+				<bodyShape>Humanoid</bodyShape>
+			</li>
+		</modExtensions>
+	</ThingDef>
+
+</Defs>
